@@ -30,7 +30,7 @@ if (cart.length > 0) {
                       350,000 تومان
                     </h4>
                   </div>
-                  <a className="btn btn-primary btn-shadow d-block w-100 mt-4" >حذف همه آیتم ها</a>
+                  <a onClick={clearCart} className="btn btn-primary btn-shadow d-block w-100 mt-4" >حذف همه آیتم ها</a>
               </div>
     
     
