@@ -20,6 +20,19 @@ switch (action.type) {
         })
         return {...state , cart:tempCart}
     }
+    case "GET_TOTALS":{
+        let {total , quantity} = state.cart.reducer((cartTotal , cartItem)=> {
+            const {price , quantity} = cartItem;
+            const itemTotal= price * quantity;
+            cartTotal.total += itemTotal;
+            cartTotal.quantity += quantity;
+            return cartTotal;
+        },{
+            total : 0,
+            quantity : 0
+        });
+        return {...state , total , quantity}
+    }
     }
 }
 export default reducer;

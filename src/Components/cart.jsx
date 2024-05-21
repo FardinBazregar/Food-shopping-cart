@@ -3,7 +3,7 @@ import {useCartContext} from '../context'
 import CartItem from "./cartItem";
 import { RiShoppingCartLine } from "react-icons/ri";
 const Cart = () => {
-const {cart , clearCart} = useCartContext();
+const {cart , clearCart , total} = useCartContext();
 let renderedContent = (
   <>
   <RiShoppingCartLine style={{fontSize:'8rem'}}/>
@@ -27,7 +27,7 @@ if (cart.length > 0) {
                   <div className="text-center mb-4 pb-3 border-bottom">
                     <h3 className="h5 mb-3 pb-1">جمع کل</h3>
                     <h4 className="fw-normal">
-                      350,000 تومان
+                      {total.toLocaleString()} تومان
                     </h4>
                   </div>
                   <a onClick={clearCart} className="btn btn-primary btn-shadow d-block w-100 mt-4" >حذف همه آیتم ها</a>
